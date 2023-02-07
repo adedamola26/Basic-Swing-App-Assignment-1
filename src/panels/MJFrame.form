@@ -102,7 +102,7 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="majorLabel" max="32767" attributes="0"/>
+                          <Component id="majorLabel" alignment="0" max="32767" attributes="0"/>
                           <Component id="countryLabel" alignment="0" max="32767" attributes="0"/>
                           <Component id="cityLabel" alignment="0" max="32767" attributes="0"/>
                           <Component id="addressLabel" alignment="0" max="32767" attributes="0"/>
@@ -115,17 +115,17 @@
                       <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="lastNameField" alignment="1" max="32767" attributes="0"/>
-                          <Component id="firstNameField" max="32767" attributes="0"/>
-                          <Component id="ageField" max="32767" attributes="0"/>
-                          <Component id="teleNumField" max="32767" attributes="0"/>
+                          <Component id="firstNameField" alignment="1" max="32767" attributes="0"/>
+                          <Component id="ageField" alignment="1" max="32767" attributes="0"/>
+                          <Component id="teleNumField" alignment="1" max="32767" attributes="0"/>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="addressField" pref="122" max="32767" attributes="0"/>
-                                  <Component id="majorField" max="32767" attributes="0"/>
-                                  <Component id="countryField" max="32767" attributes="0"/>
-                                  <Component id="cityField" max="32767" attributes="0"/>
-                                  <Component id="emailField" max="32767" attributes="0"/>
+                                  <Component id="addressField" alignment="0" pref="122" max="32767" attributes="0"/>
+                                  <Component id="majorField" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="countryField" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="cityField" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="emailField" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -144,8 +144,8 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="259" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="saveButton" min="-2" pref="111" max="-2" attributes="0"/>
-                          <Component id="titleLabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="saveButton" alignment="1" min="-2" pref="111" max="-2" attributes="0"/>
+                          <Component id="titleLabel" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
@@ -155,7 +155,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
                               <Component id="titleLabel" min="-2" pref="45" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -184,8 +184,8 @@
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="addressLabel" min="-2" pref="36" max="-2" attributes="0"/>
-                                  <Component id="addressField" min="-2" max="-2" attributes="0"/>
+                                  <Component id="addressLabel" alignment="0" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="addressField" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -217,6 +217,69 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
+            <Component class="javax.swing.JTextField" name="lastNameField">
+            </Component>
+            <Component class="javax.swing.JLabel" name="countryLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Country"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="cityField">
+            </Component>
+            <Component class="javax.swing.JLabel" name="majorLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Major"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="ageLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Age"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="majorField">
+            </Component>
+            <Component class="javax.swing.JTextField" name="ageField">
+            </Component>
+            <Component class="javax.swing.JLabel" name="photoLabel">
+            </Component>
+            <Component class="javax.swing.JTextField" name="teleNumField">
+            </Component>
+            <Component class="javax.swing.JButton" name="uploadButton">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Upload Photo"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="uploadButtonActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="teleNumLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Telephone Number"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="saveButton">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="12" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Save Profile"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="saveButtonActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="emailLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Email"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="emailField">
+            </Component>
+            <Component class="javax.swing.JLabel" name="addressLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Address"/>
+              </Properties>
+            </Component>
             <Component class="javax.swing.JLabel" name="titleLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -240,74 +303,11 @@
                 <Property name="text" type="java.lang.String" value="City"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="firstNameField">
-            </Component>
-            <Component class="javax.swing.JTextField" name="lastNameField">
-            </Component>
-            <Component class="javax.swing.JTextField" name="cityField">
-            </Component>
-            <Component class="javax.swing.JLabel" name="ageLabel">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Age"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="ageField">
-            </Component>
-            <Component class="javax.swing.JTextField" name="teleNumField">
-            </Component>
-            <Component class="javax.swing.JLabel" name="teleNumLabel">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Telephone Number"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="emailLabel">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Email"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="emailField">
-            </Component>
-            <Component class="javax.swing.JLabel" name="addressLabel">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Address"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JTextField" name="addressField">
             </Component>
+            <Component class="javax.swing.JTextField" name="firstNameField">
+            </Component>
             <Component class="javax.swing.JTextField" name="countryField">
-            </Component>
-            <Component class="javax.swing.JLabel" name="countryLabel">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Country"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="majorLabel">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Major"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="majorField">
-            </Component>
-            <Component class="javax.swing.JLabel" name="photoLabel">
-            </Component>
-            <Component class="javax.swing.JButton" name="uploadButton">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Upload Photo"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="uploadButtonActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="saveButton">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="12" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Save Profile"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="saveButtonActionPerformed"/>
-              </Events>
             </Component>
           </SubComponents>
         </Container>

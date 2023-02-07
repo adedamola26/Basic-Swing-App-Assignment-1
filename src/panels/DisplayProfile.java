@@ -16,9 +16,9 @@ public class DisplayProfile extends javax.swing.JPanel {
     /**
      * Creates new form DisplayProfile
      */
-    public DisplayProfile(User user) {
+    public DisplayProfile(User givenUser) {
         initComponents();
-        this.inputUser = user;
+        this.inputUser = givenUser;
         populateFields();
     }
 
@@ -31,48 +31,48 @@ public class DisplayProfile extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        photoInput = new javax.swing.JLabel();
-        titleLabel = new javax.swing.JLabel();
-        firstNameLabel = new javax.swing.JLabel();
-        lastNameLabel = new javax.swing.JLabel();
-        ageLabel = new javax.swing.JLabel();
-        teleNumLabel = new javax.swing.JLabel();
-        emailLabel = new javax.swing.JLabel();
-        addressLabel = new javax.swing.JLabel();
-        cityLabel = new javax.swing.JLabel();
-        countryLabel = new javax.swing.JLabel();
         majorLabel = new javax.swing.JLabel();
-        firstNameInput = new javax.swing.JLabel();
-        lastNameInput = new javax.swing.JLabel();
-        ageInput = new javax.swing.JLabel();
-        teleNumInput = new javax.swing.JLabel();
-        emailInput = new javax.swing.JLabel();
+        teleNumLabel = new javax.swing.JLabel();
+        photoInput = new javax.swing.JLabel();
         addressInput = new javax.swing.JLabel();
+        firstNameInput = new javax.swing.JLabel();
+        titleLabel = new javax.swing.JLabel();
+        emailLabel = new javax.swing.JLabel();
+        lastNameInput = new javax.swing.JLabel();
         cityInput = new javax.swing.JLabel();
+        firstNameLabel = new javax.swing.JLabel();
+        addressLabel = new javax.swing.JLabel();
+        ageInput = new javax.swing.JLabel();
         countryInput = new javax.swing.JLabel();
+        lastNameLabel = new javax.swing.JLabel();
+        cityLabel = new javax.swing.JLabel();
+        teleNumInput = new javax.swing.JLabel();
         majorInput = new javax.swing.JLabel();
+        ageLabel = new javax.swing.JLabel();
+        countryLabel = new javax.swing.JLabel();
+        emailInput = new javax.swing.JLabel();
+
+        majorLabel.setText("Major");
+
+        teleNumLabel.setText("Telephone Number");
 
         titleLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         titleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titleLabel.setText("User Profile");
 
-        firstNameLabel.setText("First Name");
-
-        lastNameLabel.setText("Last Name");
-
-        ageLabel.setText("Age");
-
-        teleNumLabel.setText("Telephone Number");
-
         emailLabel.setText("Email");
+
+        firstNameLabel.setText("First Name");
 
         addressLabel.setText("Address");
 
+        lastNameLabel.setText("Last Name");
+
         cityLabel.setText("City");
 
-        countryLabel.setText("Country");
+        ageLabel.setText("Age");
 
-        majorLabel.setText("Major");
+        countryLabel.setText("Country");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -192,15 +192,16 @@ public class DisplayProfile extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void populateFields() {
-        firstNameInput.setText(inputUser.getFirstName());
-        lastNameInput.setText(inputUser.getLastName());
-        ageInput.setText(inputUser.getAge());
-        teleNumInput.setText(inputUser.getTeleNum());
-        emailInput.setText(inputUser.getEmail());
-        addressInput.setText(inputUser.getAddress());
-        cityInput.setText(inputUser.getCity());
-        countryInput.setText(inputUser.getCountry());
-        majorInput.setText(inputUser.getMajor());
-        photoInput.setIcon(inputUser.getPhoto());
+       
+       firstNameInput.setText(inputUser.getFirstName());
+       lastNameInput.setText(inputUser.getLastName());
+       ageInput.setText(inputUser.getAge());
+       teleNumInput.setText(inputUser.getTeleNum());
+       emailInput.setText(inputUser.getEmail());
+       addressInput.setText(inputUser.getAddress());
+       cityInput.setText(inputUser.getCity());
+       countryInput.setText(inputUser.getCountry());
+       majorInput.setText(inputUser.getMajor());
+       photoInput.setIcon(inputUser.getPhoto()); 
     }
 }

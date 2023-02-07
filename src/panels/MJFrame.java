@@ -3,8 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package panels;
-import data.User;
 
+import data.User;
 import java.awt.FileDialog;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
@@ -18,14 +18,15 @@ import javax.swing.JOptionPane;
  *
  * @author adeda
  */
-public class MainJFrame extends javax.swing.JFrame {
+public class MJFrame extends javax.swing.JFrame {
 
     User inputUser;
     /**
-     * Creates new form MainJFrame
+     * Creates new form MJFrame
      */
-    public MainJFrame() {
+    public MJFrame() {
         initComponents();
+        
         inputUser = new User();
     }
 
@@ -42,28 +43,28 @@ public class MainJFrame extends javax.swing.JFrame {
         topPanel = new javax.swing.JPanel();
         viewProfileButton = new javax.swing.JButton();
         bottomPanel = new javax.swing.JPanel();
+        lastNameField = new javax.swing.JTextField();
+        countryLabel = new javax.swing.JLabel();
+        cityField = new javax.swing.JTextField();
+        majorLabel = new javax.swing.JLabel();
+        ageLabel = new javax.swing.JLabel();
+        majorField = new javax.swing.JTextField();
+        ageField = new javax.swing.JTextField();
+        photoLabel = new javax.swing.JLabel();
+        teleNumField = new javax.swing.JTextField();
+        uploadButton = new javax.swing.JButton();
+        teleNumLabel = new javax.swing.JLabel();
+        saveButton = new javax.swing.JButton();
+        emailLabel = new javax.swing.JLabel();
+        emailField = new javax.swing.JTextField();
+        addressLabel = new javax.swing.JLabel();
         titleLabel = new javax.swing.JLabel();
         firstNameLabel = new javax.swing.JLabel();
         lastNameLabel = new javax.swing.JLabel();
         cityLabel = new javax.swing.JLabel();
-        firstNameField = new javax.swing.JTextField();
-        lastNameField = new javax.swing.JTextField();
-        cityField = new javax.swing.JTextField();
-        ageLabel = new javax.swing.JLabel();
-        ageField = new javax.swing.JTextField();
-        teleNumField = new javax.swing.JTextField();
-        teleNumLabel = new javax.swing.JLabel();
-        emailLabel = new javax.swing.JLabel();
-        emailField = new javax.swing.JTextField();
-        addressLabel = new javax.swing.JLabel();
         addressField = new javax.swing.JTextField();
+        firstNameField = new javax.swing.JTextField();
         countryField = new javax.swing.JTextField();
-        countryLabel = new javax.swing.JLabel();
-        majorLabel = new javax.swing.JLabel();
-        majorField = new javax.swing.JTextField();
-        photoLabel = new javax.swing.JLabel();
-        uploadButton = new javax.swing.JButton();
-        saveButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -96,26 +97,11 @@ public class MainJFrame extends javax.swing.JFrame {
 
         splitPane.setTopComponent(topPanel);
 
-        titleLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        titleLabel.setText("Enter User Details");
-
-        firstNameLabel.setText("First Name");
-
-        lastNameLabel.setText("Last Name");
-
-        cityLabel.setText("City");
-
-        ageLabel.setText("Age");
-
-        teleNumLabel.setText("Telephone Number");
-
-        emailLabel.setText("Email");
-
-        addressLabel.setText("Address");
-
         countryLabel.setText("Country");
 
         majorLabel.setText("Major");
+
+        ageLabel.setText("Age");
 
         uploadButton.setText("Upload Photo");
         uploadButton.addActionListener(new java.awt.event.ActionListener() {
@@ -124,6 +110,8 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        teleNumLabel.setText("Telephone Number");
+
         saveButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         saveButton.setText("Save Profile");
         saveButton.addActionListener(new java.awt.event.ActionListener() {
@@ -131,6 +119,19 @@ public class MainJFrame extends javax.swing.JFrame {
                 saveButtonActionPerformed(evt);
             }
         });
+
+        emailLabel.setText("Email");
+
+        addressLabel.setText("Address");
+
+        titleLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        titleLabel.setText("Enter User Details");
+
+        firstNameLabel.setText("First Name");
+
+        lastNameLabel.setText("Last Name");
+
+        cityLabel.setText("City");
 
         javax.swing.GroupLayout bottomPanelLayout = new javax.swing.GroupLayout(bottomPanel);
         bottomPanel.setLayout(bottomPanelLayout);
@@ -253,20 +254,46 @@ public class MainJFrame extends javax.swing.JFrame {
     private void viewProfileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewProfileButtonActionPerformed
         // TODO add your handling code here:
         if(inputUser.getFirstName()== null || inputUser.getLastName()== null ||
-           inputUser.getAge() == null || inputUser.getTeleNum()== null ||
-           inputUser.getEmail() == null || inputUser.getAddress()==null ||
-           inputUser.getCity()==null || inputUser.getCountry()==null ||
-           inputUser.getMajor()==null || inputUser.getPhoto() == null){
-            
-            JOptionPane.showMessageDialog(this, 
-                    "Please provide complete user details!",
-                    "Error", HEIGHT);
+            inputUser.getAge() == null || inputUser.getTeleNum()== null ||
+            inputUser.getEmail() == null || inputUser.getAddress()==null ||
+            inputUser.getCity()==null || inputUser.getCountry()==null ||
+            inputUser.getMajor()==null || inputUser.getPhoto() == null){
+
+            JOptionPane.showMessageDialog(this,
+                "Please provide complete user details!",
+                "Error", HEIGHT);
         }else{
             DisplayProfile userProfile = new DisplayProfile(inputUser);
             splitPane.setBottomComponent(userProfile);
 
         }
     }//GEN-LAST:event_viewProfileButtonActionPerformed
+
+    private void uploadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uploadButtonActionPerformed
+        // TODO add your handling code here:
+
+        // Display dialog window from which the user can select a file
+        FileDialog dialog = new FileDialog(this, "Select Photo",
+            FileDialog.LOAD);
+        dialog.setVisible(true);
+        // Save file's path
+        String filePath = (dialog.getDirectory() + dialog.getFile());
+
+        // create image object
+        BufferedImage image = null;
+        try {
+            image = ImageIO.read(new File(filePath));
+        } catch (IOException error) {
+        }
+
+        // Set image dimension to be equal to dimension of label it will fit in
+        Image scaledImage = image.getScaledInstance(photoLabel.getWidth(),
+            photoLabel.getHeight(),Image.SCALE_SMOOTH);
+
+        // Make image an ImageIcon object for JLabel to accept it
+        ImageIcon imageIcon = new ImageIcon(scaledImage);
+        photoLabel.setIcon(imageIcon);
+    }//GEN-LAST:event_uploadButtonActionPerformed
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
         // TODO add your handling code here:
@@ -281,32 +308,6 @@ public class MainJFrame extends javax.swing.JFrame {
         inputUser.setMajor(majorField.getText());
         inputUser.setPhoto(photoLabel.getIcon());
     }//GEN-LAST:event_saveButtonActionPerformed
-
-    private void uploadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uploadButtonActionPerformed
-        // TODO add your handling code here:
-        
-        // Display dialog window from which the user can select a file
-        FileDialog dialog = new FileDialog(this, "Select Photo",
-                FileDialog.LOAD);
-        dialog.setVisible(true);
-        // Save file's path
-        String filePath = (dialog.getDirectory() + dialog.getFile());
-        
-        // create image object
-        BufferedImage image = null;
-        try {
-            image = ImageIO.read(new File(filePath));
-        } catch (IOException error) {
-        }
-        
-        // Set image dimension to be equal to dimension of label it will fit in
-        Image scaledImage = image.getScaledInstance(photoLabel.getWidth(),
-                photoLabel.getHeight(),Image.SCALE_SMOOTH);
-        
-        // Make image an ImageIcon object for JLabel to accept it
-        ImageIcon imageIcon = new ImageIcon(scaledImage);
-        photoLabel.setIcon(imageIcon);
-    }//GEN-LAST:event_uploadButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -325,20 +326,20 @@ public class MainJFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainJFrame().setVisible(true);
+                new MJFrame().setVisible(true);
             }
         });
     }
